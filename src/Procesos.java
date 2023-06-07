@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
 
 public class Procesos {
 	HashMap<Integer, Mascota> mapMascotas = new HashMap<>();
+	int cod=1;
 	
 	public void iniciar() {
 		 String menu="MENU\n";
@@ -27,7 +28,7 @@ public class Procesos {
         switch (op) {
         
         case 1:
-        	 int rep,cod = 1;
+        	 int rep;
 
              do {
                  Mascota mascota = new Mascota();
@@ -54,6 +55,8 @@ public class Procesos {
             System.out.println("Lista de mascotas:");
             for (Mascota m : mapMascotas.values()) {
                 m.mostrarInformacion();
+                m.hacerSonido(m.getEspecie());
+                m.obtenerAccionMascota(m.getEspecie());
                 System.out.println("-------------------");
             }
             break;
@@ -62,6 +65,7 @@ public class Procesos {
             break;
         default:
             System.out.println("Opción inválida. Por favor, seleccione una opción válida.");
+            
     }
 		
 	}
